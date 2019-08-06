@@ -23,7 +23,9 @@ import capnp
 
 NL_MSG_HDR_FORMAT = "=LHHLL"
 NL_MSG_HDR_FORMAT_SIZE = struct.calcsize(NL_MSG_HDR_FORMAT)
-VERDICTS = {0:"Allow", 1:"Block"}
+ALLOW = 0
+BLOCK = 1 
+VERDICTS = {ALLOW:"Allow", BLOCK:"Block"}
 COLOR_START_DICT = {0:"\x1b[32m", 1:"\x1b[31m"}
 COLOR_END = "\x1b[0m"
 
@@ -73,11 +75,11 @@ def security_logic(proc):
     Dummy function that performs functionality on messages arrived from kernel security module
     hooks in middle of operation.
     :param proc: the proc received from the kernel
-    :return: 0 - to allow operation to continue, 1 - to block operation from proceeding.
+    :return: ALLOW - to allow operation to continue, BLOCK - to block operation from proceeding.
     """
     if proc.name == "/bin/ls":
-        return 1
-    return 0
+        return BLOCK
+    return ALLOW
 
 
 def main():
