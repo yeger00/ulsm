@@ -1,0 +1,8 @@
+rule SecurityRule
+{
+        strings:
+                $security_string = "security"
+
+        condition:
+                $security_string
+}
