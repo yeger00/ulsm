@@ -77,9 +77,10 @@ def security_logic(proc):
     :param proc: the proc received from the kernel
     :return: ALLOW - to allow operation to continue, BLOCK - to block operation from proceeding.
     """
-    if proc.name == "/bin/ls":
+    process_data = open(proc.path, "rb").read()
+    if YARA_RULE.match(data=process_data):
         return BLOCK
-    return ALLOW
+    return ALLOW   
 
 
 def main():
