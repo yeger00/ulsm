@@ -2,5 +2,5 @@
 
 struct Process{
   id @0 :UInt32;
-  name @1 :Text;
+  path @1 :Text;
 }
