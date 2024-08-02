@@ -24,6 +24,9 @@ Security - Adding serialization to the kernel is bad practice and increases the 
 Synchronization - Need to be very careful with the operations you can perform from the user process in order to avoid deadlock.
 Because of these disadvantages it is **not advised to use ULMS on production system**.
 
+## More Resources
+A record of the sesion about ULSM from KTLV in hebrew can be found [here](https://www.youtube.com/watch?v=5W_qEz7DOwU)
+
 # Getting started
 ## Prerequisites
 * Install [Cap'n PRoto](https://capnproto.org/install.html) by following the instructions on the repository.
